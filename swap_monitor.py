@@ -34,6 +34,8 @@
 import subprocess
 import time
 import sys
+from datetime import datetime
+current_timestamp = datetime.now()
 
 # --- Configuration ---
 SWAP_THRESHOLD_PERCENT = 90  # Reboot if swap usage exceeds this percentage
@@ -108,7 +110,7 @@ def reboot_lxc():
 # --- Main Logic ---
 
 def main():
-    print(f"Running swap usage check.")
+    print(f "{current_timestamp}"":" "Running swap usage check.")
     print(f"Reboot threshold: {SWAP_THRESHOLD_PERCENT}%")
 
     total_swap, used_swap = get_swap_usage()
